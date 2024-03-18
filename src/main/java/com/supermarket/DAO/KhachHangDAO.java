@@ -25,7 +25,7 @@ public class KhachHangDAO extends HeThongDAO<KhachHang, String> {
     }
 
     public void updatemk(String mknew, KhachHang entity) {
-        JdbcHelper.update(updatemk, mknew, entity.getMatKhau());
+        JdbcHelper.update(updatemk, mknew, entity.getMaKH());
     }
 
     @Override
