@@ -7,7 +7,9 @@ import static org.junit.Assert.assertNull;
 import java.util.List;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.supermarket.ENTITY.ChiTietHoaDon;
@@ -15,14 +17,26 @@ import com.supermarket.ENTITY.ChiTietHoaDon;
 public class ChiTietHoaDonDAOTest {
 	private ChiTietHoaDonDAO dao;
 
+	@BeforeClass
+	public static void m1() {
+		System.out.println("Bắt đầu TestCase ChiTietHoaDonDAOTest");
+	}
+	
 	@Before
 	public void init() {
 		dao = new ChiTietHoaDonDAO();
+		System.out.println("Chuẩn bị Test");
 	}
 
 	@After
 	public void tearDown() {
 		dao = null;
+		System.out.println("Kết thúc Test");
+	}
+	
+	@AfterClass
+	public static void m2() {
+		System.out.println("Kết thúc TestCase ChiTietHoaDonDAOTest");
 	}
 	
 	@Test
