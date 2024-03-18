@@ -19,6 +19,9 @@ public class DonHangDAO extends HeThongDAO<DonHang, String> {
             + "ON DONHANG.MADH = CHITIETDONHANG.MADH\n"
             + "WHERE DONHANG.MADH = ?\n"
             + "GROUP BY DONHANG.MADH, DONHANG.NGAYDATHANG, DONHANG.MAKH";
+    String selectById_SQL_2 = "SELECT MADH, NGAYDATHANG, MAKH \n"
+            + "FROM DONHANG\n"
+            + "WHERE MADH = ?\n";
 
     @Override
     public void insert(DonHang entity) {
@@ -68,5 +71,22 @@ public class DonHangDAO extends HeThongDAO<DonHang, String> {
             e.toString();
         }
         return list;
+    }
+    
+    public DonHang selectById_2(String key) {
+    	List<DonHang> list = new ArrayList<>();
+        try {
+            ResultSet rs = JdbcHelper.query(selectById_SQL_2, key);
+            while (rs.next()) {
+                DonHang entity = new DonHang();
+                entity.setMaDH(rs.getString("madh"));
+                entity.setNgayDatHang(rs.getDate("ngaydathang"));
+                entity.setMaKH(rs.getString("makh"));
+                list.add(entity);
+            }
+        } catch (Exception e) {
+            e.toString();
+        }
+        return list.get(0);
     }
 }
