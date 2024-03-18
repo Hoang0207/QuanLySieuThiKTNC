@@ -135,7 +135,7 @@ public class SanPhamDAOTest {
     }
     
     @AfterClass
-    public void fn() {
+    public static void fn() {
     	System.out.print("Finish");
     }
 }
