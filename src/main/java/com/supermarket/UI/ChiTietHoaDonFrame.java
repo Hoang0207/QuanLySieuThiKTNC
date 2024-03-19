@@ -21,7 +21,119 @@ public class ChiTietHoaDonFrame extends javax.swing.JFrame {
         init();
     }
     
-    public ChiTietHoaDonFrame(String mahd) {
+    public String getMaHD() {
+		return maHD;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public ChiTietHoaDonDAO getCthdDao() {
+		return cthdDao;
+	}
+
+	public List<ChiTietHoaDon> getCthdList() {
+		return cthdList;
+	}
+
+	public javax.swing.JLabel getBtnBack() {
+		return btnBack;
+	}
+
+	public javax.swing.JButton getBtnFirst() {
+		return btnFirst;
+	}
+
+	public javax.swing.JButton getBtnLast() {
+		return btnLast;
+	}
+
+	public javax.swing.JButton getBtnNext() {
+		return btnNext;
+	}
+
+	public javax.swing.JButton getBtnPrevious() {
+		return btnPrevious;
+	}
+
+	public javax.swing.JLabel getLblDonViGia() {
+		return lblDonViGia;
+	}
+
+	public javax.swing.JLabel getLblMaHD() {
+		return lblMaHD;
+	}
+
+	public javax.swing.JLabel getLblMaSP() {
+		return lblMaSP;
+	}
+
+	public javax.swing.JLabel getLblPic() {
+		return lblPic;
+	}
+
+	public javax.swing.JLabel getLblSoLuong() {
+		return lblSoLuong;
+	}
+
+	public javax.swing.JLabel getLblThanhTien() {
+		return lblThanhTien;
+	}
+
+	public javax.swing.JLabel getLblTongTien() {
+		return lblTongTien;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlMaHD() {
+		return pnlMaHD;
+	}
+
+	public javax.swing.JPanel getPnlNavigation() {
+		return pnlNavigation;
+	}
+
+	public javax.swing.JPanel getPnlPic() {
+		return pnlPic;
+	}
+
+	public javax.swing.JPanel getPnl_Sub() {
+		return pnl_Sub;
+	}
+
+	public javax.swing.JScrollPane getScroll() {
+		return scroll;
+	}
+
+	public javax.swing.JTable getTblCT() {
+		return tblCT;
+	}
+
+	public javax.swing.JLabel getTxtMaHD() {
+		return txtMaHD;
+	}
+
+	public javax.swing.JLabel getTxtMaSP() {
+		return txtMaSP;
+	}
+
+	public javax.swing.JLabel getTxtSoLuong() {
+		return txtSoLuong;
+	}
+
+	public javax.swing.JLabel getTxtThanhTien() {
+		return txtThanhTien;
+	}
+
+	public javax.swing.JLabel getTxtTongTien() {
+		return txtTongTien;
+	}
+
+	public ChiTietHoaDonFrame(String mahd) {
         initComponents();
         this.maHD = mahd;
         this.setTitle("Chi Tiết Hoá Đơn Của Mã HD "+"'" + this.maHD + "'");

@@ -40,7 +40,891 @@ public class Admin_Frame extends javax.swing.JFrame {
     private int indexTK = -1;
     private Date ngaySinh;
 
-    //Biến LIST
+    public int getIndexSP() {
+		return indexSP;
+	}
+
+	public int getIndexKH() {
+		return indexKH;
+	}
+
+	public int getIndexCL() {
+		return indexCL;
+	}
+
+	public int getIndexHD() {
+		return indexHD;
+	}
+
+	public int getIndexDH() {
+		return indexDH;
+	}
+
+	public int getIndexNV() {
+		return indexNV;
+	}
+
+	public int getIndexTK() {
+		return indexTK;
+	}
+
+	public Date getNgaySinh() {
+		return ngaySinh;
+	}
+
+	public List<SanPham> getSpList() {
+		return spList;
+	}
+
+	public List<KhachHang> getKhList() {
+		return khList;
+	}
+
+	public List<ChungLoai> getClList() {
+		return clList;
+	}
+
+	public List<DonHang> getDhList() {
+		return dhList;
+	}
+
+	public List<NhanVien> getNvList() {
+		return nvList;
+	}
+
+	public List<HoaDon> getHdList() {
+		return hdList;
+	}
+
+	public KhachHangDAO getKhDao() {
+		return khDao;
+	}
+
+	public SanPhamDAO getSpDao() {
+		return spDao;
+	}
+
+	public ChungLoaiDAO getClDao() {
+		return clDao;
+	}
+
+	public DonHangDAO getDhDao() {
+		return dhDao;
+	}
+
+	public HoaDonDAO getHdDao() {
+		return hdDao;
+	}
+
+	public ChiTietDonHangDAO getDhctDao() {
+		return dhctDao;
+	}
+
+	public NhanVienDAO getNvDao() {
+		return nvDao;
+	}
+
+	public ThongKeDAO getTkDao() {
+		return tkDao;
+	}
+
+	public javax.swing.JButton getBtnDangXuat() {
+		return btnDangXuat;
+	}
+
+	public javax.swing.JButton getBtnFirst_CL() {
+		return btnFirst_CL;
+	}
+
+	public javax.swing.JButton getBtnFirst_DH() {
+		return btnFirst_DH;
+	}
+
+	public javax.swing.JButton getBtnFirst_HD() {
+		return btnFirst_HD;
+	}
+
+	public javax.swing.JButton getBtnFirst_KH() {
+		return btnFirst_KH;
+	}
+
+	public javax.swing.JButton getBtnFirst_NV() {
+		return btnFirst_NV;
+	}
+
+	public javax.swing.JButton getBtnFirst_SP() {
+		return btnFirst_SP;
+	}
+
+	public javax.swing.JButton getBtnFirst_TK() {
+		return btnFirst_TK;
+	}
+
+	public javax.swing.JButton getBtnLast_CL() {
+		return btnLast_CL;
+	}
+
+	public javax.swing.JButton getBtnLast_DH() {
+		return btnLast_DH;
+	}
+
+	public javax.swing.JButton getBtnLast_HD() {
+		return btnLast_HD;
+	}
+
+	public javax.swing.JButton getBtnLast_KH() {
+		return btnLast_KH;
+	}
+
+	public javax.swing.JButton getBtnLast_NV() {
+		return btnLast_NV;
+	}
+
+	public javax.swing.JButton getBtnLast_Sp() {
+		return btnLast_Sp;
+	}
+
+	public javax.swing.JButton getBtnLast_TK() {
+		return btnLast_TK;
+	}
+
+	public javax.swing.JButton getBtnMoi_CL() {
+		return btnMoi_CL;
+	}
+
+	public javax.swing.JButton getBtnMoi_NV() {
+		return btnMoi_NV;
+	}
+
+	public javax.swing.JButton getBtnMoi_SP() {
+		return btnMoi_SP;
+	}
+
+	public javax.swing.JButton getBtnNext_CL() {
+		return btnNext_CL;
+	}
+
+	public javax.swing.JButton getBtnNext_DH() {
+		return btnNext_DH;
+	}
+
+	public javax.swing.JButton getBtnNext_HD() {
+		return btnNext_HD;
+	}
+
+	public javax.swing.JButton getBtnNext_KH() {
+		return btnNext_KH;
+	}
+
+	public javax.swing.JButton getBtnNext_NV() {
+		return btnNext_NV;
+	}
+
+	public javax.swing.JButton getBtnNext_SP() {
+		return btnNext_SP;
+	}
+
+	public javax.swing.JButton getBtnNext_TK() {
+		return btnNext_TK;
+	}
+
+	public javax.swing.JButton getBtnPrevious_CL() {
+		return btnPrevious_CL;
+	}
+
+	public javax.swing.JButton getBtnPrevious_DH() {
+		return btnPrevious_DH;
+	}
+
+	public javax.swing.JButton getBtnPrevious_NV() {
+		return btnPrevious_NV;
+	}
+
+	public javax.swing.JButton getBtnPrevious_SP() {
+		return btnPrevious_SP;
+	}
+
+	public javax.swing.JButton getBtnPrevious_TK() {
+		return btnPrevious_TK;
+	}
+
+	public javax.swing.JButton getBtnPrevioust_HD() {
+		return btnPrevioust_HD;
+	}
+
+	public javax.swing.JButton getBtnPrevioust_KH() {
+		return btnPrevioust_KH;
+	}
+
+	public javax.swing.JButton getBtnReset_SP() {
+		return btnReset_SP;
+	}
+
+	public javax.swing.JButton getBtnSua_CL() {
+		return btnSua_CL;
+	}
+
+	public javax.swing.JButton getBtnSua_KH() {
+		return btnSua_KH;
+	}
+
+	public javax.swing.JButton getBtnSua_NV() {
+		return btnSua_NV;
+	}
+
+	public javax.swing.JButton getBtnSua_SP() {
+		return btnSua_SP;
+	}
+
+	public javax.swing.JButton getBtnThem_CL() {
+		return btnThem_CL;
+	}
+
+	public javax.swing.JButton getBtnThem_NV() {
+		return btnThem_NV;
+	}
+
+	public javax.swing.JButton getBtnThem_SP() {
+		return btnThem_SP;
+	}
+
+	public javax.swing.JButton getBtnTim_SP() {
+		return btnTim_SP;
+	}
+
+	public javax.swing.JButton getBtnXoa_CL() {
+		return btnXoa_CL;
+	}
+
+	public javax.swing.JButton getBtnXoa_DH() {
+		return btnXoa_DH;
+	}
+
+	public javax.swing.JButton getBtnXoa_HD() {
+		return btnXoa_HD;
+	}
+
+	public javax.swing.JButton getBtnXoa_NV() {
+		return btnXoa_NV;
+	}
+
+	public javax.swing.JButton getBtnXoa_SP() {
+		return btnXoa_SP;
+	}
+
+	public javax.swing.JComboBox<String> getCboChungLoai_SP() {
+		return cboChungLoai_SP;
+	}
+
+	public javax.swing.JLabel getjLabel30() {
+		return jLabel30;
+	}
+
+	public javax.swing.JLabel getLblBanItNhat_TK() {
+		return lblBanItNhat_TK;
+	}
+
+	public javax.swing.JLabel getLblBanNhieuNhat_TK() {
+		return lblBanNhieuNhat_TK;
+	}
+
+	public javax.swing.JLabel getLblChungLoai_SP() {
+		return lblChungLoai_SP;
+	}
+
+	public javax.swing.JLabel getLblClock() {
+		return lblClock;
+	}
+
+	public javax.swing.JLabel getLblDoanhThu_TK() {
+		return lblDoanhThu_TK;
+	}
+
+	public javax.swing.JLabel getLblDonViGia_DH() {
+		return lblDonViGia_DH;
+	}
+
+	public javax.swing.JLabel getLblDonViGia_HD() {
+		return lblDonViGia_HD;
+	}
+
+	public javax.swing.JLabel getLblGia_SP() {
+		return lblGia_SP;
+	}
+
+	public javax.swing.JLabel getLblGioiTinh_KH() {
+		return lblGioiTinh_KH;
+	}
+
+	public javax.swing.JLabel getLblGioiTinh_NV() {
+		return lblGioiTinh_NV;
+	}
+
+	public javax.swing.JLabel getLblHoTen_NV() {
+		return lblHoTen_NV;
+	}
+
+	public javax.swing.JLabel getLblInfor() {
+		return lblInfor;
+	}
+
+	public javax.swing.JLabel getLblMaKH_DH() {
+		return lblMaKH_DH;
+	}
+
+	public javax.swing.JLabel getLblMaNV_HD() {
+		return lblMaNV_HD;
+	}
+
+	public javax.swing.JLabel getLblMa_CL() {
+		return lblMa_CL;
+	}
+
+	public javax.swing.JLabel getLblMa_DH() {
+		return lblMa_DH;
+	}
+
+	public javax.swing.JLabel getLblMa_HD() {
+		return lblMa_HD;
+	}
+
+	public javax.swing.JLabel getLblMa_KH() {
+		return lblMa_KH;
+	}
+
+	public javax.swing.JLabel getLblMa_NV() {
+		return lblMa_NV;
+	}
+
+	public javax.swing.JLabel getLblMa_SP() {
+		return lblMa_SP;
+	}
+
+	public javax.swing.JLabel getLblMatKhau_KH() {
+		return lblMatKhau_KH;
+	}
+
+	public javax.swing.JLabel getLblMatKhau_NV() {
+		return lblMatKhau_NV;
+	}
+
+	public javax.swing.JLabel getLblMeo_DH() {
+		return lblMeo_DH;
+	}
+
+	public javax.swing.JLabel getLblMeo_HD() {
+		return lblMeo_HD;
+	}
+
+	public javax.swing.JLabel getLblMieuTa_CL() {
+		return lblMieuTa_CL;
+	}
+
+	public javax.swing.JLabel getLblNam_TK() {
+		return lblNam_TK;
+	}
+
+	public javax.swing.JLabel getLblNgayDangKy_KH() {
+		return lblNgayDangKy_KH;
+	}
+
+	public javax.swing.JLabel getLblNgayDatHang_DH() {
+		return lblNgayDatHang_DH;
+	}
+
+	public javax.swing.JLabel getLblNgayLap_HD() {
+		return lblNgayLap_HD;
+	}
+
+	public javax.swing.JLabel getLblNgaySinh_KH() {
+		return lblNgaySinh_KH;
+	}
+
+	public javax.swing.JLabel getLblNgaySinh_NV() {
+		return lblNgaySinh_NV;
+	}
+
+	public javax.swing.JLabel getLblPic_CL() {
+		return lblPic_CL;
+	}
+
+	public javax.swing.JLabel getLblPic_DH() {
+		return lblPic_DH;
+	}
+
+	public javax.swing.JLabel getLblPic_HD() {
+		return lblPic_HD;
+	}
+
+	public javax.swing.JLabel getLblPic_NV() {
+		return lblPic_NV;
+	}
+
+	public javax.swing.JLabel getLblPic_SP() {
+		return lblPic_SP;
+	}
+
+	public javax.swing.JLabel getLblPic_TK() {
+		return lblPic_TK;
+	}
+
+	public javax.swing.JLabel getLblSoLuong_SP() {
+		return lblSoLuong_SP;
+	}
+
+	public javax.swing.JLabel getLblTen_CL() {
+		return lblTen_CL;
+	}
+
+	public javax.swing.JLabel getLblTen_KH() {
+		return lblTen_KH;
+	}
+
+	public javax.swing.JLabel getLblTen_SP() {
+		return lblTen_SP;
+	}
+
+	public javax.swing.JLabel getLblTitle_CL() {
+		return lblTitle_CL;
+	}
+
+	public javax.swing.JLabel getLblTitle_DH() {
+		return lblTitle_DH;
+	}
+
+	public javax.swing.JLabel getLblTitle_HD() {
+		return lblTitle_HD;
+	}
+
+	public javax.swing.JLabel getLblTitle_KH() {
+		return lblTitle_KH;
+	}
+
+	public javax.swing.JLabel getLblTitle_NV() {
+		return lblTitle_NV;
+	}
+
+	public javax.swing.JLabel getLblTitle_SP() {
+		return lblTitle_SP;
+	}
+
+	public javax.swing.JLabel getLblTitle_TK() {
+		return lblTitle_TK;
+	}
+
+	public javax.swing.JLabel getLblTongTien_DH() {
+		return lblTongTien_DH;
+	}
+
+	public javax.swing.JLabel getLblTongTien_HD() {
+		return lblTongTien_HD;
+	}
+
+	public javax.swing.JPanel getPnlContainer() {
+		return pnlContainer;
+	}
+
+	public javax.swing.JPanel getPnlHeader() {
+		return pnlHeader;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlInfor_CL() {
+		return pnlInfor_CL;
+	}
+
+	public javax.swing.JPanel getPnlInfor_DH() {
+		return pnlInfor_DH;
+	}
+
+	public javax.swing.JPanel getPnlInfor_HD() {
+		return pnlInfor_HD;
+	}
+
+	public javax.swing.JPanel getPnlInfor_KH() {
+		return pnlInfor_KH;
+	}
+
+	public javax.swing.JPanel getPnlInfor_NV() {
+		return pnlInfor_NV;
+	}
+
+	public javax.swing.JPanel getPnlInfor_TK() {
+		return pnlInfor_TK;
+	}
+
+	public javax.swing.JPanel getPnlMa_DH() {
+		return pnlMa_DH;
+	}
+
+	public javax.swing.JPanel getPnlMa_HD() {
+		return pnlMa_HD;
+	}
+
+	public javax.swing.JPanel getPnlMa_KH() {
+		return pnlMa_KH;
+	}
+
+	public javax.swing.JPanel getPnlMainBtn_CL() {
+		return pnlMainBtn_CL;
+	}
+
+	public javax.swing.JPanel getPnlMainBtn_NV() {
+		return pnlMainBtn_NV;
+	}
+
+	public javax.swing.JPanel getPnlMainBtn_SP() {
+		return pnlMainBtn_SP;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_CL() {
+		return pnlNavigation_CL;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_DH() {
+		return pnlNavigation_DH;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_HD() {
+		return pnlNavigation_HD;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_KH() {
+		return pnlNavigation_KH;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_NV() {
+		return pnlNavigation_NV;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_SP() {
+		return pnlNavigation_SP;
+	}
+
+	public javax.swing.JPanel getPnlNavigation_TK() {
+		return pnlNavigation_TK;
+	}
+
+	public javax.swing.JPanel getPnlPic_CL() {
+		return pnlPic_CL;
+	}
+
+	public javax.swing.JPanel getPnlPic_DH() {
+		return pnlPic_DH;
+	}
+
+	public javax.swing.JPanel getPnlPic_HD() {
+		return pnlPic_HD;
+	}
+
+	public javax.swing.JPanel getPnlPic_KH() {
+		return pnlPic_KH;
+	}
+
+	public javax.swing.JPanel getPnlPic_NV() {
+		return pnlPic_NV;
+	}
+
+	public javax.swing.JPanel getPnlPic_SP() {
+		return pnlPic_SP;
+	}
+
+	public javax.swing.JPanel getPnlPic_TK() {
+		return pnlPic_TK;
+	}
+
+	public javax.swing.JPanel getPnlTimKiem_SP() {
+		return pnlTimKiem_SP;
+	}
+
+	public javax.swing.JPanel getPnlTitle_CL() {
+		return pnlTitle_CL;
+	}
+
+	public javax.swing.JPanel getPnlTitle_DH() {
+		return pnlTitle_DH;
+	}
+
+	public javax.swing.JPanel getPnlTitle_HD() {
+		return pnlTitle_HD;
+	}
+
+	public javax.swing.JPanel getPnlTitle_KH() {
+		return pnlTitle_KH;
+	}
+
+	public javax.swing.JPanel getPnlTitle_NV() {
+		return pnlTitle_NV;
+	}
+
+	public javax.swing.JPanel getPnlTitle_SP() {
+		return pnlTitle_SP;
+	}
+
+	public javax.swing.JPanel getPnl_ChungLoai() {
+		return pnl_ChungLoai;
+	}
+
+	public javax.swing.JPanel getPnl_DonHang() {
+		return pnl_DonHang;
+	}
+
+	public javax.swing.JPanel getPnl_HoaDon() {
+		return pnl_HoaDon;
+	}
+
+	public javax.swing.JPanel getPnl_KhachHang() {
+		return pnl_KhachHang;
+	}
+
+	public javax.swing.JPanel getPnl_NhanVien() {
+		return pnl_NhanVien;
+	}
+
+	public javax.swing.JPanel getPnl_SanPham() {
+		return pnl_SanPham;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_CL() {
+		return pnl_Sub_CL;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_DH() {
+		return pnl_Sub_DH;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_HD() {
+		return pnl_Sub_HD;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_KH() {
+		return pnl_Sub_KH;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_NV() {
+		return pnl_Sub_NV;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_SP() {
+		return pnl_Sub_SP;
+	}
+
+	public javax.swing.JPanel getPnl_Sub_TK() {
+		return pnl_Sub_TK;
+	}
+
+	public javax.swing.JPanel getPnl_ThongKe() {
+		return pnl_ThongKe;
+	}
+
+	public javax.swing.ButtonGroup getRdoGioiTinh_KH() {
+		return rdoGioiTinh_KH;
+	}
+
+	public javax.swing.ButtonGroup getRdoGioiTinh_NV() {
+		return rdoGioiTinh_NV;
+	}
+
+	public javax.swing.JRadioButton getRdoNam_KH() {
+		return rdoNam_KH;
+	}
+
+	public javax.swing.JRadioButton getRdoNam_NV() {
+		return rdoNam_NV;
+	}
+
+	public javax.swing.JRadioButton getRdoNu_KH() {
+		return rdoNu_KH;
+	}
+
+	public javax.swing.JRadioButton getRdoNu_NV() {
+		return rdoNu_NV;
+	}
+
+	public javax.swing.JScrollPane getScrollMieuTa_CL() {
+		return scrollMieuTa_CL;
+	}
+
+	public javax.swing.JScrollPane getScroll_CL() {
+		return scroll_CL;
+	}
+
+	public javax.swing.JScrollPane getScroll_HD() {
+		return scroll_HD;
+	}
+
+	public javax.swing.JScrollPane getScroll_KH() {
+		return scroll_KH;
+	}
+
+	public javax.swing.JScrollPane getScroll_NV() {
+		return scroll_NV;
+	}
+
+	public javax.swing.JScrollPane getScroll_SP() {
+		return scroll_SP;
+	}
+
+	public javax.swing.JScrollPane getScroll_TK() {
+		return scroll_TK;
+	}
+
+	public javax.swing.JScrollPane getSroll_DH() {
+		return sroll_DH;
+	}
+
+	public javax.swing.JTabbedPane getTabs() {
+		return tabs;
+	}
+
+	public javax.swing.JTable getTbl_CL() {
+		return tbl_CL;
+	}
+
+	public javax.swing.JTable getTbl_DH() {
+		return tbl_DH;
+	}
+
+	public javax.swing.JTable getTbl_HD() {
+		return tbl_HD;
+	}
+
+	public javax.swing.JTable getTbl_KH() {
+		return tbl_KH;
+	}
+
+	public javax.swing.JTable getTbl_NV() {
+		return tbl_NV;
+	}
+
+	public javax.swing.JTable getTbl_SP() {
+		return tbl_SP;
+	}
+
+	public javax.swing.JTable getTbl_TK() {
+		return tbl_TK;
+	}
+
+	public javax.swing.JLabel getTxtBanItNhat_TK() {
+		return txtBanItNhat_TK;
+	}
+
+	public javax.swing.JLabel getTxtBanNhieuNhat_TK() {
+		return txtBanNhieuNhat_TK;
+	}
+
+	public javax.swing.JLabel getTxtDoanhThu_TK() {
+		return txtDoanhThu_TK;
+	}
+
+	public javax.swing.JTextField getTxtGia_SP() {
+		return txtGia_SP;
+	}
+
+	public javax.swing.JTextField getTxtHoTen_NV() {
+		return txtHoTen_NV;
+	}
+
+	public javax.swing.JTextField getTxtMaKH_DH() {
+		return txtMaKH_DH;
+	}
+
+	public javax.swing.JTextField getTxtMaNV_HD() {
+		return txtMaNV_HD;
+	}
+
+	public javax.swing.JTextField getTxtMa_CL() {
+		return txtMa_CL;
+	}
+
+	public javax.swing.JLabel getTxtMa_DH() {
+		return txtMa_DH;
+	}
+
+	public javax.swing.JLabel getTxtMa_HD() {
+		return txtMa_HD;
+	}
+
+	public javax.swing.JLabel getTxtMa_KH() {
+		return txtMa_KH;
+	}
+
+	public javax.swing.JTextField getTxtMa_NV() {
+		return txtMa_NV;
+	}
+
+	public javax.swing.JTextField getTxtMa_SP() {
+		return txtMa_SP;
+	}
+
+	public javax.swing.JTextField getTxtMatKhau_KH() {
+		return txtMatKhau_KH;
+	}
+
+	public javax.swing.JTextField getTxtMatKhau_NV() {
+		return txtMatKhau_NV;
+	}
+
+	public javax.swing.JTextArea getTxtMieuTa_CL() {
+		return txtMieuTa_CL;
+	}
+
+	public javax.swing.JLabel getTxtNam_TK() {
+		return txtNam_TK;
+	}
+
+	public javax.swing.JTextField getTxtNgayDangKy_KH() {
+		return txtNgayDangKy_KH;
+	}
+
+	public javax.swing.JTextField getTxtNgayDatHang_DH() {
+		return txtNgayDatHang_DH;
+	}
+
+	public javax.swing.JTextField getTxtNgayLap_HD() {
+		return txtNgayLap_HD;
+	}
+
+	public javax.swing.JTextField getTxtNgaySinh_KH() {
+		return txtNgaySinh_KH;
+	}
+
+	public javax.swing.JTextField getTxtNgaySinh_NV() {
+		return txtNgaySinh_NV;
+	}
+
+	public javax.swing.JTextField getTxtSoLuong_SP() {
+		return txtSoLuong_SP;
+	}
+
+	public javax.swing.JTextField getTxtTen_CL() {
+		return txtTen_CL;
+	}
+
+	public javax.swing.JTextField getTxtTen_KH() {
+		return txtTen_KH;
+	}
+
+	public javax.swing.JTextField getTxtTen_SP() {
+		return txtTen_SP;
+	}
+
+	public javax.swing.JTextField getTxtTim_SP() {
+		return txtTim_SP;
+	}
+
+	public javax.swing.JLabel getTxtTongTien_DH() {
+		return txtTongTien_DH;
+	}
+
+	public javax.swing.JLabel getTxtTongTien_HD() {
+		return txtTongTien_HD;
+	}
+
+	//Biến LIST
     private List<SanPham> spList = new ArrayList<>();
     private List<KhachHang> khList = new ArrayList<>();
     private List<ChungLoai> clList = new ArrayList<>();

@@ -18,7 +18,79 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         initCombox();
     }
     
-    private void initCombox() {
+    public NhanVienDAO getNvDao() {
+		return nvDao;
+	}
+
+	public KhachHangDAO getKhDao() {
+		return khDao;
+	}
+
+	public javax.swing.JButton getBtnDangNhap() {
+		return btnDangNhap;
+	}
+
+	public javax.swing.JButton getBtnDoiMK() {
+		return btnDoiMK;
+	}
+
+	public javax.swing.JComboBox<String> getCbbVaiTro() {
+		return cbbVaiTro;
+	}
+
+	public javax.swing.JLabel getLblLogo() {
+		return lblLogo;
+	}
+
+	public javax.swing.JLabel getLblMatKhauCu() {
+		return lblMatKhauCu;
+	}
+
+	public javax.swing.JLabel getLblMatKhauMoi() {
+		return lblMatKhauMoi;
+	}
+
+	public javax.swing.JLabel getLblNhapLaiMKM() {
+		return lblNhapLaiMKM;
+	}
+
+	public javax.swing.JLabel getLblTenDangNhap() {
+		return lblTenDangNhap;
+	}
+
+	public javax.swing.JLabel getLblVaiTro() {
+		return lblVaiTro;
+	}
+
+	public javax.swing.JPanel getPnlBtns() {
+		return pnlBtns;
+	}
+
+	public javax.swing.JPanel getPnlContain() {
+		return pnlContain;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPasswordField getTxtMatKhauCu() {
+		return txtMatKhauCu;
+	}
+
+	public javax.swing.JPasswordField getTxtMatKhauMoi() {
+		return txtMatKhauMoi;
+	}
+
+	public javax.swing.JPasswordField getTxtNhapLaiMKM() {
+		return txtNhapLaiMKM;
+	}
+
+	public javax.swing.JTextField getTxtTenDangNhap() {
+		return txtTenDangNhap;
+	}
+
+	private void initCombox() {
         cbbVaiTro.removeAllItems();
         String[] vaiTro = {"Nhân Viên", "Khách Hàng"};
         for (String vaitro : vaiTro) {

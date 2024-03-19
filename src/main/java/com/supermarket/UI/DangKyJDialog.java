@@ -27,7 +27,95 @@ public class DangKyJDialog extends javax.swing.JDialog {
         khachHangList = dao.selectAll();
     }
 
-    @SuppressWarnings("unchecked")
+    public KhachHangDAO getDao() {
+		return dao;
+	}
+
+	public List<KhachHang> getKhachHangList() {
+		return khachHangList;
+	}
+
+	public Date getNgaySinh() {
+		return ngaySinh;
+	}
+
+	public javax.swing.ButtonGroup getBgrGioiTinh() {
+		return bgrGioiTinh;
+	}
+
+	public javax.swing.JButton getBtnDangKy() {
+		return btnDangKy;
+	}
+
+	public javax.swing.JButton getBtnDangNhap() {
+		return btnDangNhap;
+	}
+
+	public javax.swing.JLabel getLblGioiTinh() {
+		return lblGioiTinh;
+	}
+
+	public javax.swing.JLabel getLblHoTen() {
+		return lblHoTen;
+	}
+
+	public javax.swing.JLabel getLblLogo() {
+		return lblLogo;
+	}
+
+	public javax.swing.JLabel getLblMatKhau() {
+		return lblMatKhau;
+	}
+
+	public javax.swing.JLabel getLblNgaySinh() {
+		return lblNgaySinh;
+	}
+
+	public javax.swing.JLabel getLblTenDangNhap() {
+		return lblTenDangNhap;
+	}
+
+	public javax.swing.JPanel getPnlBtns() {
+		return pnlBtns;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlLogo() {
+		return pnlLogo;
+	}
+
+	public javax.swing.JPanel getPnl_DangKy() {
+		return pnl_DangKy;
+	}
+
+	public javax.swing.JRadioButton getRdoNam() {
+		return rdoNam;
+	}
+
+	public javax.swing.JRadioButton getRdoNu() {
+		return rdoNu;
+	}
+
+	public javax.swing.JTextField getTxtHoVaTen() {
+		return txtHoVaTen;
+	}
+
+	public javax.swing.JPasswordField getTxtMatKhau() {
+		return txtMatKhau;
+	}
+
+	public javax.swing.JTextField getTxtNgaySinh() {
+		return txtNgaySinh;
+	}
+
+	public javax.swing.JTextField getTxtTenDangNhap() {
+		return txtTenDangNhap;
+	}
+
+	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
