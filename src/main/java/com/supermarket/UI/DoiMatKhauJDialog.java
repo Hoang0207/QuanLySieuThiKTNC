@@ -114,11 +114,14 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         NhanVien nv = nvDao.selectById(taikhoan);
         if (nv == null) {
-            JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại", "", 0);
+            MsgBox.alert(this, "Tài khoản không tồn tại");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else if (!matkhau.equalsIgnoreCase(nv.getMatKhau())) {
-            JOptionPane.showMessageDialog(this, "Sai mật khẩu", "", 0);
+            MsgBox.alert(this, "Sai mật khẩu");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else if (!matkhaucf.equalsIgnoreCase(matkhaunew)) {
-            JOptionPane.showMessageDialog(this, "Xác nhận mật khẩu không đúng", "", 0);
+            MsgBox.alert(this, "Xác nhận mật khẩu không đúng");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else {
             nvDao.updatemk(matkhaunew, nv);
             MsgBox.alert(this, "Đổi mật khẩu thành công");
@@ -133,11 +136,14 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         KhachHang kh = khDao.selectById(taikhoan);
         if (kh == null) {
-            JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại", "", 0);
+        	MsgBox.alert(this, "Tài khoản không tồn tại");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else if (!matkhau.equalsIgnoreCase(kh.getMatKhau())) {
-            JOptionPane.showMessageDialog(this, "Sai mật khẩu", "", 0);
+        	MsgBox.alert(this, "Sai mật khẩu");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else if (!matkhaucf.equalsIgnoreCase(matkhaunew)) {
-            JOptionPane.showMessageDialog(this, "Xác nhận mật khẩu không đúng", "", 0);
+        	MsgBox.alert(this, "Xác nhận mật khẩu không đúng");
+            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
         } else {
             khDao.updatemk(matkhaunew, kh);
             MsgBox.alert(this, "Đổi mật khẩu thành công");
@@ -146,23 +152,23 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     
     private boolean kiemtra(){
         if (txtTenDangNhap.getText().equals("") && txtMatKhauCu.getText().equals("") && txtMatKhauMoi.getText().equals("") && txtNhapLaiMKM.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "", 0);
+            MsgBox.alert(this, "Vui lòng nhập đầy đủ thông tin");
             return false;
         }
         if (txtTenDangNhap.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Nhập tên đăng nhập!", "", 0);
+            MsgBox.alert(this, "Nhập tên đăng nhập!");
             return false;
         }
         if (txtMatKhauCu.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Nhập mật khẩu cũ!", "", 0);
+            MsgBox.alert(this, "Nhập mật khẩu cũ!");
             return false;
         }
         if (txtMatKhauMoi.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Nhập mật khẩu mới!", "", 0);
+            MsgBox.alert(this, "Nhập mật khẩu mới!");
             return false;
         }
         if (txtNhapLaiMKM.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Nhập lại mật khẩu!", "", 0);
+            MsgBox.alert(this, "Nhập lại mật khẩu!");
             return false;
         }
         return true;
@@ -382,6 +388,8 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     private void btnDoiMKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMKActionPerformed
         if (kiemtra()) {
             doiMatKhau();
+        }else {
+        	throw new IllegalArgumentException("Đổi mật khẩu thất bại do dự liệu không hợp lệ");
         }
     }//GEN-LAST:event_btnDoiMKActionPerformed
 

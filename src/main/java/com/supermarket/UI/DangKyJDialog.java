@@ -374,6 +374,8 @@ public class DangKyJDialog extends javax.swing.JDialog {
             } else {
                 MsgBox.alert(null, "Bạn chưa đủ 18 tuổi để tạo tài khoản");
             }
+        }else {
+        	throw new IllegalArgumentException("Đăng ký thất bại do dữ liệu không hợp lệ");
         }
     }//GEN-LAST:event_btnDangKyActionPerformed
 

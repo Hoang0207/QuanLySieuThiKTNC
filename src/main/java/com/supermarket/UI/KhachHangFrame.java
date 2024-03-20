@@ -721,6 +721,8 @@ public class KhachHangFrame extends javax.swing.JFrame {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         if (check()) {
             add();
+        }else {
+        	throw new IllegalArgumentException("Thêm sản phẩm vào giỏ hàng thất bại");
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -951,6 +953,7 @@ public class KhachHangFrame extends javax.swing.JFrame {
     private void order() {
         if (tblDonHang.getRowCount() == 0) {
             MsgBox.alert(null, "Bạn chưa có sản phẩm nào trong giỏ hàng");
+            throw new IllegalArgumentException("Đặt hàng thất bại do giỏ hàng trống");
         } else {
             DonHang dh = new DonHang();
             dh.setNgayDatHang(XDate.now());

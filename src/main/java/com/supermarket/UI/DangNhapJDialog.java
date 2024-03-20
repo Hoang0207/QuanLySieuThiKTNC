@@ -360,6 +360,8 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt){//GEN-FIRST:event_btnDangNhapActionPerformed
         if (check()) {
             DangNhap();
+        }else {
+        	throw new IllegalArgumentException("Đăng nhập thất bại do chưa nhập đủ thông tin đăng nhập");
         }
         if (chkNhoMatKhau.isSelected() == false) {
             file.delete();
@@ -567,8 +569,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         KhachHang kh = khDAO.selectById(maKH);
         if (kh == null) {
             MsgBox.alert(this, "Sai tên đăng nhập !");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else if (!passWord.equals(kh.getMatKhau())) {
             MsgBox.alert(this, "Sai mật khẩu !");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else {
             nhoMatKhau();
             this.setVisible(false);
