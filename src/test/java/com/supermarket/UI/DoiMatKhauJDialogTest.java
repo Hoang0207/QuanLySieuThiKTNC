@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class Admin_FrameTest {
+public class DoiMatKhauJDialogTest {
 
   @BeforeMethod
   public void beforeMethod() {

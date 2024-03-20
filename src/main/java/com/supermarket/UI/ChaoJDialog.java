@@ -49,7 +49,19 @@ public class ChaoJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
+    public Timer getT() {
+		return t;
+	}
+
+	public javax.swing.JLabel getLblLogo() {
+		return lblLogo;
+	}
+
+	public javax.swing.JProgressBar getProgressBar() {
+		return progressBar;
+	}
+
+	public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("".equals(info.getName())) {

@@ -33,7 +33,123 @@ public class ChiTietDonHangFrame extends javax.swing.JFrame {
         init();
     }
 
-    @SuppressWarnings("unchecked")
+    public int getIndex() {
+		return index;
+	}
+
+	public String getMaDH() {
+		return maDH;
+	}
+
+	public ChiTietDonHangDAO getCtdhDao() {
+		return ctdhDao;
+	}
+
+	public List<ChiTietDonHang> getCtdhList() {
+		return ctdhList;
+	}
+
+	public float getTongTien() {
+		return tongTien;
+	}
+
+	public javax.swing.JLabel getBtnBack() {
+		return btnBack;
+	}
+
+	public javax.swing.JButton getBtnFirst() {
+		return btnFirst;
+	}
+
+	public javax.swing.JButton getBtnLast() {
+		return btnLast;
+	}
+
+	public javax.swing.JButton getBtnNext() {
+		return btnNext;
+	}
+
+	public javax.swing.JButton getBtnPrevious() {
+		return btnPrevious;
+	}
+
+	public javax.swing.JLabel getLblDonViGia() {
+		return lblDonViGia;
+	}
+
+	public javax.swing.JLabel getLblMaDH() {
+		return lblMaDH;
+	}
+
+	public javax.swing.JLabel getLblMaSP() {
+		return lblMaSP;
+	}
+
+	public javax.swing.JLabel getLblPic() {
+		return lblPic;
+	}
+
+	public javax.swing.JLabel getLblSoLuong() {
+		return lblSoLuong;
+	}
+
+	public javax.swing.JLabel getLblThanhTien() {
+		return lblThanhTien;
+	}
+
+	public javax.swing.JLabel getLblTongTien() {
+		return lblTongTien;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlMaDH() {
+		return pnlMaDH;
+	}
+
+	public javax.swing.JPanel getPnlNavigation() {
+		return pnlNavigation;
+	}
+
+	public javax.swing.JPanel getPnlPic() {
+		return pnlPic;
+	}
+
+	public javax.swing.JPanel getPnl_Sub() {
+		return pnl_Sub;
+	}
+
+	public javax.swing.JScrollPane getScroll() {
+		return scroll;
+	}
+
+	public javax.swing.JTable getTblCT() {
+		return tblCT;
+	}
+
+	public javax.swing.JLabel getTxtMaDH() {
+		return txtMaDH;
+	}
+
+	public javax.swing.JLabel getTxtMaSP() {
+		return txtMaSP;
+	}
+
+	public javax.swing.JLabel getTxtSoLuong() {
+		return txtSoLuong;
+	}
+
+	public javax.swing.JLabel getTxtThanhTien() {
+		return txtThanhTien;
+	}
+
+	public javax.swing.JLabel getTxtTongTien() {
+		return txtTongTien;
+	}
+
+	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

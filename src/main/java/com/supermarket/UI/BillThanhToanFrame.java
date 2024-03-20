@@ -21,7 +21,131 @@ public class BillThanhToanFrame extends javax.swing.JDialog {
         init();
     }
     
-    public BillThanhToanFrame(List<BillThanhToan> bill, String maHD, String tenNV, float tongTien) {
+    public List<BillThanhToan> getBillThanhToan() {
+		return billThanhToan;
+	}
+
+	public String getMaHD() {
+		return maHD;
+	}
+
+	public String getTenNV() {
+		return tenNV;
+	}
+
+	public float getTongTien() {
+		return tongTien;
+	}
+
+	public javax.swing.JScrollPane getjScrollPane1() {
+		return jScrollPane1;
+	}
+
+	public javax.swing.JLabel getLblCamOn() {
+		return lblCamOn;
+	}
+
+	public javax.swing.JLabel getLblDiaChi() {
+		return lblDiaChi;
+	}
+
+	public javax.swing.JLabel getLblDiaChiTT() {
+		return lblDiaChiTT;
+	}
+
+	public javax.swing.JLabel getLblDonVi() {
+		return lblDonVi;
+	}
+
+	public javax.swing.JLabel getLblDonVi1() {
+		return lblDonVi1;
+	}
+
+	public javax.swing.JLabel getLblDonVi2() {
+		return lblDonVi2;
+	}
+
+	public javax.swing.JLabel getLblGiam() {
+		return lblGiam;
+	}
+
+	public javax.swing.JLabel getLblHD() {
+		return lblHD;
+	}
+
+	public javax.swing.JLabel getLblHotline() {
+		return lblHotline;
+	}
+
+	public javax.swing.JLabel getLblLogo() {
+		return lblLogo;
+	}
+
+	public javax.swing.JLabel getLblNgayBan() {
+		return lblNgayBan;
+	}
+
+	public javax.swing.JLabel getLblSupermarket() {
+		return lblSupermarket;
+	}
+
+	public javax.swing.JLabel getLblThuNgan() {
+		return lblThuNgan;
+	}
+
+	public javax.swing.JLabel getLblTitle() {
+		return lblTitle;
+	}
+
+	public javax.swing.JLabel getLblTong() {
+		return lblTong;
+	}
+
+	public javax.swing.JLabel getLblTra() {
+		return lblTra;
+	}
+
+	public javax.swing.JPanel getPnlContent() {
+		return pnlContent;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlThanhToan() {
+		return pnlThanhToan;
+	}
+
+	public javax.swing.JPanel getPnl_Bill() {
+		return pnl_Bill;
+	}
+
+	public javax.swing.JTable getTblCont() {
+		return tblCont;
+	}
+
+	public javax.swing.JLabel getTxtGiam() {
+		return txtGiam;
+	}
+
+	public javax.swing.JLabel getTxtNgayBan() {
+		return txtNgayBan;
+	}
+
+	public javax.swing.JLabel getTxtThuNgan() {
+		return txtThuNgan;
+	}
+
+	public javax.swing.JLabel getTxtTong() {
+		return txtTong;
+	}
+
+	public javax.swing.JLabel getTxtTra() {
+		return txtTra;
+	}
+
+	public BillThanhToanFrame(List<BillThanhToan> bill, String maHD, String tenNV, float tongTien) {
         initComponents();
         this.billThanhToan = bill;
         this.maHD = maHD;

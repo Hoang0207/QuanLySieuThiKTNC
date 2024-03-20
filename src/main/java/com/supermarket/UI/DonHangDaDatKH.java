@@ -24,7 +24,87 @@ public class DonHangDaDatKH extends javax.swing.JFrame {
         init();
     }
 
-    public DonHangDaDatKH(String maKh) {
+    public String getMaKh() {
+		return maKh;
+	}
+
+	public List<DonHang> getListDH() {
+		return listDH;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public javax.swing.JButton getBtnMHChinh() {
+		return btnMHChinh;
+	}
+
+	public javax.swing.JScrollPane getjScrollPane1() {
+		return jScrollPane1;
+	}
+
+	public javax.swing.JLabel getLblMaDH() {
+		return lblMaDH;
+	}
+
+	public javax.swing.JLabel getLblMaKH() {
+		return lblMaKH;
+	}
+
+	public javax.swing.JLabel getLblMeo_HD() {
+		return lblMeo_HD;
+	}
+
+	public javax.swing.JLabel getLblNgayDatHang() {
+		return lblNgayDatHang;
+	}
+
+	public javax.swing.JLabel getLblPic() {
+		return lblPic;
+	}
+
+	public javax.swing.JLabel getLblTitle() {
+		return lblTitle;
+	}
+
+	public javax.swing.JLabel getLblTongTien() {
+		return lblTongTien;
+	}
+
+	public javax.swing.JPanel getPnlInfor() {
+		return pnlInfor;
+	}
+
+	public javax.swing.JPanel getPnlMain() {
+		return pnlMain;
+	}
+
+	public javax.swing.JPanel getPnlPic() {
+		return pnlPic;
+	}
+
+	public javax.swing.JTable getTblDSDHDD() {
+		return tblDSDHDD;
+	}
+
+	public javax.swing.JLabel getTxtMaDH() {
+		return txtMaDH;
+	}
+
+	public javax.swing.JLabel getTxtMaKH() {
+		return txtMaKH;
+	}
+
+	public javax.swing.JLabel getTxtNgayDatHang() {
+		return txtNgayDatHang;
+	}
+
+	public javax.swing.JLabel getTxtTongTien() {
+		return txtTongTien;
+	}
+
+	public DonHangDaDatKH(String maKh) {
         initComponents();
         this.maKh = maKh;
         init();

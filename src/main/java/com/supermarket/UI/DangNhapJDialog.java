@@ -357,7 +357,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         System.exit(0);
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt){//GEN-FIRST:event_btnDangNhapActionPerformed
         if (check()) {
             DangNhap();
         }
@@ -449,7 +449,71 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         } 
     }
 
-    private void EnterBtnLogin(KeyEvent k) {
+    public javax.swing.JLabel getLblDoiMatKhau() {
+		return LblDoiMatKhau;
+	}
+
+	public void setLblDoiMatKhau(javax.swing.JLabel lblDoiMatKhau) {
+		LblDoiMatKhau = lblDoiMatKhau;
+	}
+
+	public javax.swing.JButton getBtnDangNhap() {
+		return btnDangNhap;
+	}
+
+	public void setBtnDangNhap(javax.swing.JButton btnDangNhap) {
+		this.btnDangNhap = btnDangNhap;
+	}
+
+	public javax.swing.JButton getBtnThoat() {
+		return btnThoat;
+	}
+
+	public void setBtnThoat(javax.swing.JButton btnThoat) {
+		this.btnThoat = btnThoat;
+	}
+
+	public javax.swing.JComboBox<String> getCboVaiTro() {
+		return cboVaiTro;
+	}
+
+	public void setCboVaiTro(javax.swing.JComboBox<String> cboVaiTro) {
+		this.cboVaiTro = cboVaiTro;
+	}
+
+	public javax.swing.JCheckBox getChkNhoMatKhau() {
+		return chkNhoMatKhau;
+	}
+
+	public void setChkNhoMatKhau(javax.swing.JCheckBox chkNhoMatKhau) {
+		this.chkNhoMatKhau = chkNhoMatKhau;
+	}
+
+	public javax.swing.JLabel getLblDangKy() {
+		return lblDangKy;
+	}
+
+	public void setLblDangKy(javax.swing.JLabel lblDangKy) {
+		this.lblDangKy = lblDangKy;
+	}
+
+	public javax.swing.JPasswordField getTxtMatKhau() {
+		return txtMatKhau;
+	}
+
+	public void setTxtMatKhau(javax.swing.JPasswordField txtMatKhau) {
+		this.txtMatKhau = txtMatKhau;
+	}
+
+	public javax.swing.JTextField getTxtTenDangNhap() {
+		return txtTenDangNhap;
+	}
+
+	public void setTxtTenDangNhap(javax.swing.JTextField txtTenDangNhap) {
+		this.txtTenDangNhap = txtTenDangNhap;
+	}
+
+	private void EnterBtnLogin(KeyEvent k) {
         if (k.getKeyCode() == KeyEvent.VK_ENTER) {
             this.btnDangNhap.doClick();
         }
@@ -463,8 +527,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         }
     }
 
-    private void DangNhap() {
-        System.out.println(chkNhoMatKhau.isSelected());
+    private void DangNhap(){
         if (cboVaiTro.getSelectedIndex() == 0) {
             DangNhapNhanVien();
         } else {
@@ -479,8 +542,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         NhanVien nv = nvDAO.selectById(maNV);
         if (nv == null) {
             MsgBox.alert(this, "Sai tên đăng nhập!");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else if (!passWord.equals(nv.getMatKhau())) {
             MsgBox.alert(this, "Sai mật khẩu!");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else {
             nhoMatKhau();
             if (nv.isVaiTro() == false) {

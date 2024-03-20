@@ -33,7 +33,287 @@ public class NhanVienBanHang extends javax.swing.JFrame {
     private String manv, maHD;
     private List<BillThanhToan> billThanhToan = new ArrayList<>();
 
-    public NhanVienBanHang() {
+    public SanPhamExtendDao getSpDao() {
+		return spDao;
+	}
+
+	public void setSpDao(SanPhamExtendDao spDao) {
+		this.spDao = spDao;
+	}
+
+	public ChungLoaiDAO getClDao() {
+		return clDao;
+	}
+
+	public void setClDao(ChungLoaiDAO clDao) {
+		this.clDao = clDao;
+	}
+
+	public ChiTietHoaDonDAO getCthdDAO() {
+		return cthdDAO;
+	}
+
+	public void setCthdDAO(ChiTietHoaDonDAO cthdDAO) {
+		this.cthdDAO = cthdDAO;
+	}
+
+	public HoaDonDAO getHdDao() {
+		return hdDao;
+	}
+
+	public void setHdDao(HoaDonDAO hdDao) {
+		this.hdDao = hdDao;
+	}
+
+	public List<String> getSpbought() {
+		return spbought;
+	}
+
+	public void setSpbought(List<String> spbought) {
+		this.spbought = spbought;
+	}
+
+	public DefaultTableModel getModelHD() {
+		return modelHD;
+	}
+
+	public void setModelHD(DefaultTableModel modelHD) {
+		this.modelHD = modelHD;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public float getTongTien() {
+		return tongTien;
+	}
+
+	public void setTongTien(float tongTien) {
+		this.tongTien = tongTien;
+	}
+
+	public String getManv() {
+		return manv;
+	}
+
+	public void setManv(String manv) {
+		this.manv = manv;
+	}
+
+	public String getMaHD() {
+		return maHD;
+	}
+
+	public void setMaHD(String maHD) {
+		this.maHD = maHD;
+	}
+
+	public List<BillThanhToan> getBillThanhToan() {
+		return billThanhToan;
+	}
+
+	public void setBillThanhToan(List<BillThanhToan> billThanhToan) {
+		this.billThanhToan = billThanhToan;
+	}
+
+	public javax.swing.JButton getBtnDangXuat() {
+		return btnDangXuat;
+	}
+
+	public void setBtnDangXuat(javax.swing.JButton btnDangXuat) {
+		this.btnDangXuat = btnDangXuat;
+	}
+
+	public javax.swing.JButton getBtnIn() {
+		return btnIn;
+	}
+
+	public void setBtnIn(javax.swing.JButton btnIn) {
+		this.btnIn = btnIn;
+	}
+
+	public javax.swing.JButton getBtnResetDSSP() {
+		return btnResetDSSP;
+	}
+
+	public void setBtnResetDSSP(javax.swing.JButton btnResetDSSP) {
+		this.btnResetDSSP = btnResetDSSP;
+	}
+
+	public javax.swing.JButton getBtnResetHD() {
+		return btnResetHD;
+	}
+
+	public void setBtnResetHD(javax.swing.JButton btnResetHD) {
+		this.btnResetHD = btnResetHD;
+	}
+
+	public javax.swing.JButton getBtnThemHD() {
+		return btnThemHD;
+	}
+
+	public void setBtnThemHD(javax.swing.JButton btnThemHD) {
+		this.btnThemHD = btnThemHD;
+	}
+
+	public javax.swing.JComboBox<String> getCbbCL() {
+		return cbbCL;
+	}
+
+	public void setCbbCL(javax.swing.JComboBox<String> cbbCL) {
+		this.cbbCL = cbbCL;
+	}
+
+	public javax.swing.JLabel getjLabel9() {
+		return jLabel9;
+	}
+
+	public void setjLabel9(javax.swing.JLabel jLabel9) {
+		this.jLabel9 = jLabel9;
+	}
+
+	public javax.swing.JScrollPane getjScrollPane1() {
+		return jScrollPane1;
+	}
+
+	public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+		this.jScrollPane1 = jScrollPane1;
+	}
+
+	public javax.swing.JScrollPane getjScrollPane2() {
+		return jScrollPane2;
+	}
+
+	public void setjScrollPane2(javax.swing.JScrollPane jScrollPane2) {
+		this.jScrollPane2 = jScrollPane2;
+	}
+
+	public javax.swing.JLabel getLblChiTiet() {
+		return lblChiTiet;
+	}
+
+	public void setLblChiTiet(javax.swing.JLabel lblChiTiet) {
+		this.lblChiTiet = lblChiTiet;
+	}
+
+	public javax.swing.JLabel getLblClock() {
+		return lblClock;
+	}
+
+	public void setLblClock(javax.swing.JLabel lblClock) {
+		this.lblClock = lblClock;
+	}
+
+	public javax.swing.JLabel getLblDSSP() {
+		return lblDSSP;
+	}
+
+	public void setLblDSSP(javax.swing.JLabel lblDSSP) {
+		this.lblDSSP = lblDSSP;
+	}
+
+	public javax.swing.JLabel getLblQuayThanhToan() {
+		return lblQuayThanhToan;
+	}
+
+	public void setLblQuayThanhToan(javax.swing.JLabel lblQuayThanhToan) {
+		this.lblQuayThanhToan = lblQuayThanhToan;
+	}
+
+	public javax.swing.JLabel getLblSoLuong() {
+		return lblSoLuong;
+	}
+
+	public void setLblSoLuong(javax.swing.JLabel lblSoLuong) {
+		this.lblSoLuong = lblSoLuong;
+	}
+
+	public javax.swing.JLabel getLblTenCL() {
+		return lblTenCL;
+	}
+
+	public void setLblTenCL(javax.swing.JLabel lblTenCL) {
+		this.lblTenCL = lblTenCL;
+	}
+
+	public javax.swing.JLabel getLblTenSP() {
+		return lblTenSP;
+	}
+
+	public void setLblTenSP(javax.swing.JLabel lblTenSP) {
+		this.lblTenSP = lblTenSP;
+	}
+
+	public javax.swing.JLabel getLblTong() {
+		return lblTong;
+	}
+
+	public void setLblTong(javax.swing.JLabel lblTong) {
+		this.lblTong = lblTong;
+	}
+
+	public javax.swing.JLabel getLblTongHoaDon() {
+		return lblTongHoaDon;
+	}
+
+	public void setLblTongHoaDon(javax.swing.JLabel lblTongHoaDon) {
+		this.lblTongHoaDon = lblTongHoaDon;
+	}
+
+	public javax.swing.JPanel getPnlHoaDon() {
+		return pnlHoaDon;
+	}
+
+	public void setPnlHoaDon(javax.swing.JPanel pnlHoaDon) {
+		this.pnlHoaDon = pnlHoaDon;
+	}
+
+	public javax.swing.JPanel getPnlMain() {
+		return pnlMain;
+	}
+
+	public void setPnlMain(javax.swing.JPanel pnlMain) {
+		this.pnlMain = pnlMain;
+	}
+
+	public javax.swing.JTable getTblDSSP() {
+		return tblDSSP;
+	}
+
+	public void setTblDSSP(javax.swing.JTable tblDSSP) {
+		this.tblDSSP = tblDSSP;
+	}
+
+	public javax.swing.JTable getTblDonHang() {
+		return tblDonHang;
+	}
+
+	public void setTblDonHang(javax.swing.JTable tblDonHang) {
+		this.tblDonHang = tblDonHang;
+	}
+
+	public javax.swing.JTextField getTxtSoLuong() {
+		return txtSoLuong;
+	}
+
+	public void setTxtSoLuong(javax.swing.JTextField txtSoLuong) {
+		this.txtSoLuong = txtSoLuong;
+	}
+
+	public javax.swing.JTextField getTxtTenSP() {
+		return txtTenSP;
+	}
+
+	public void setTxtTenSP(javax.swing.JTextField txtTenSP) {
+		this.txtTenSP = txtTenSP;
+	}
+
+	public NhanVienBanHang() {
 //        MsgBox.alert(null, "Bạn phải đăng nhập trước");
 //        System.exit(0);
         initComponents();
@@ -442,6 +722,8 @@ public class NhanVienBanHang extends javax.swing.JFrame {
             add();
             resetDSSP();
             clearTextField();
+        }else{
+        	throw new IllegalArgumentException("Thêm vào hóa đơn thất bại do có lỗi");
         };
     }//GEN-LAST:event_btnThemHDActionPerformed
 
@@ -452,11 +734,19 @@ public class NhanVienBanHang extends javax.swing.JFrame {
     private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
         if (checkInHoaDon()) {
             printHD();
-            BillThanhToanFrame billFrame = new BillThanhToanFrame(billThanhToan, maHD, manv, tongTien);
+            Thread t = new Thread() {
+            	@Override
+            	public void run() {
+            		BillThanhToanFrame billFrame = new BillThanhToanFrame(billThanhToan, maHD, manv, tongTien);
+            		billFrame.setVisible(true);   
+            	};
+            };
+            t.start();
             billThanhToan.clear();
             resetHD();
-            JOptionPane.showMessageDialog(this, "In hoá đơn thành công");
-            billFrame.setVisible(true);          
+            MsgBox.alert(null, "In hoá đơn thành công");       
+        }else{
+        	throw new IllegalArgumentException("In hóa đơn thất bại do hóa đơn trống");
         };
 
     }//GEN-LAST:event_btnInActionPerformed
@@ -629,11 +919,11 @@ public class NhanVienBanHang extends javax.swing.JFrame {
     public boolean checkThemVaoHoaDon() {
         boolean check = true;
         if (txtTenSP.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm trước", "", 0);
+            MsgBox.alert(this, "Vui lòng chọn sản phẩm trước");
             return false;
         }
         if (txtSoLuong.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng trước khi thêm đơn hàng!", "", 0);
+            MsgBox.alert(this, "Vui lòng nhập số lượng trước khi thêm đơn hàng!");
             return false;
         }
         try {
@@ -641,16 +931,16 @@ public class NhanVienBanHang extends javax.swing.JFrame {
             int soLuongHangConLai = (Integer) tblDSSP.getValueAt(index, 2);
             if (soluong > 0) {
                 if (soluong > soLuongHangConLai) {
-                    JOptionPane.showMessageDialog(this, "Số lượng bán ra không được lớn hơn số lượng có trong kho!", "", 0);
+                    MsgBox.alert(this, "Số lượng bán ra không được lớn hơn số lượng có trong kho!");
                     check = false;
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Số lượng không được nhập số âm!", "", 0);
+                MsgBox.alert(this, "Số lượng không được nhập số âm!");
                 check = false;
             }
             return check;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đúng định dạng!", "", 0);
+            MsgBox.alert(this, "Vui lòng nhập đúng định dạng!");
             check = false;
             return check;
         }
@@ -677,7 +967,7 @@ public class NhanVienBanHang extends javax.swing.JFrame {
 
     private boolean checkInHoaDon() {
         if (tblDonHang.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "Bạn chưa có sản phẩm nào!", "", 0);
+            MsgBox.alert(this, "Bạn chưa có sản phẩm nào!");
             return false;
         }
         return true;
