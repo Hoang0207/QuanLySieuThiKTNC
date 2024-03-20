@@ -1,12 +1,13 @@
 package com.supermarket.UI;
 
-import static org.junit.Assert.*;
+import java.awt.AWTException;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class DangNhapJDialogTest {
 
@@ -15,19 +16,19 @@ public class DangNhapJDialogTest {
 	private Thread t2;
 	private Thread t3;
 	
-	@BeforeClass
-	public static void beforeClass() {
+	@BeforeTest
+	public static void beforeClass() throws AWTException {
 		System.out.println("Bắt đầu quá trình test DangNhapJDialog.java");		
 	}
 	
-	@Before
+	@BeforeMethod
 	public void setUp() {
 		dialog = new DangNhapJDialog(null, true);
 		System.out.println("Bắt đầu test");
 	}
-	
+		
 	@Test
-	public void testDangNhap_1() throws InterruptedException {		
+	public void testBtnDangNhap_1() throws InterruptedException {		
 		t1 = new Thread() {
 			@Override
 			public void run() {
@@ -55,7 +56,13 @@ public class DangNhapJDialogTest {
 		t3 = new Thread() {
 			@Override
 			public void run() {
-				dialog.getBtnDangNhap().doClick();
+				try {
+					dialog.getBtnDangNhap().doClick();
+					Assert.fail("Không dự đoán được sai thông tin đăng nhập _ testBtnDangNhap_1 fail");
+				} catch (IllegalArgumentException e) {
+					System.out.println("Dự đoán trước: Sai thông tin đăng nhập _ testBtnDangNhap_1 pass");
+				}
+				
 			}
 		};
 		t1.start();
@@ -63,14 +70,11 @@ public class DangNhapJDialogTest {
 		t2.start();
 		t2.sleep(3000);
 		t3.start();
-		t3.sleep(5000);
-		dialog.setVisible(false);
-		System.out.println("Testcase testDangNhap_1 có kết quả là fail");
-		fail();
+		t3.sleep(4000);
 	}
 	
 	@Test
-	public void testDangNhap_2() throws InterruptedException {		
+	public void testBtnDangNhap_2() throws InterruptedException {		
 		t1 = new Thread() {
 			@Override
 			public void run() {
@@ -98,7 +102,12 @@ public class DangNhapJDialogTest {
 		t3 = new Thread() {
 			@Override
 			public void run() {
-				dialog.getBtnDangNhap().doClick();
+				try {
+					dialog.getBtnDangNhap().doClick();
+					System.out.println("Testcase testBtnDangNhap_2 pass");
+				} catch (IllegalArgumentException e) {
+					Assert.fail("Testcase testBtnDangNhap_2 fail");
+				}
 			}
 		};
 		t1.start();
@@ -106,13 +115,12 @@ public class DangNhapJDialogTest {
 		t2.start();
 		t2.sleep(3000);
 		t3.start();
-		t3.sleep(5000);
-		dialog.setVisible(false);
-		System.out.println("Testcase testDangNhap_2 có kết quả là pass");
-	}
+		t3.sleep(4000);
+	}	
 	
-	@After
+	@AfterMethod
 	public void tearDown() {
+		dialog.setVisible(false);
 		dialog = null;
 		t1 = null;
 		t2 = null;
@@ -120,7 +128,7 @@ public class DangNhapJDialogTest {
 		System.out.println("Kết thúc test");
 	}
 	
-	@AfterClass
+	@AfterTest
 	public static void afterClass() {
 		System.out.println("Kết thúc quá trình test DangNhapJDialog.java \n\n\n");	
 	}

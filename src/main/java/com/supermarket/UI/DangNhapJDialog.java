@@ -357,7 +357,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         System.exit(0);
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt){//GEN-FIRST:event_btnDangNhapActionPerformed
         if (check()) {
             DangNhap();
         }
@@ -527,7 +527,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         }
     }
 
-    private void DangNhap() {
+    private void DangNhap(){
         if (cboVaiTro.getSelectedIndex() == 0) {
             DangNhapNhanVien();
         } else {
@@ -542,8 +542,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         NhanVien nv = nvDAO.selectById(maNV);
         if (nv == null) {
             MsgBox.alert(this, "Sai tên đăng nhập!");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else if (!passWord.equals(nv.getMatKhau())) {
             MsgBox.alert(this, "Sai mật khẩu!");
+            throw new IllegalArgumentException("Sai thông tin đăng nhập");
         } else {
             nhoMatKhau();
             if (nv.isVaiTro() == false) {
