@@ -722,6 +722,8 @@ public class NhanVienBanHang extends javax.swing.JFrame {
             add();
             resetDSSP();
             clearTextField();
+        }else{
+        	throw new IllegalArgumentException("Thêm vào hóa đơn thất bại do có lỗi");
         };
     }//GEN-LAST:event_btnThemHDActionPerformed
 
@@ -732,11 +734,19 @@ public class NhanVienBanHang extends javax.swing.JFrame {
     private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
         if (checkInHoaDon()) {
             printHD();
-            BillThanhToanFrame billFrame = new BillThanhToanFrame(billThanhToan, maHD, manv, tongTien);
+            Thread t = new Thread() {
+            	@Override
+            	public void run() {
+            		BillThanhToanFrame billFrame = new BillThanhToanFrame(billThanhToan, maHD, manv, tongTien);
+            		billFrame.setVisible(true);   
+            	};
+            };
+            t.start();
             billThanhToan.clear();
             resetHD();
-            JOptionPane.showMessageDialog(this, "In hoá đơn thành công");
-            billFrame.setVisible(true);          
+            MsgBox.alert(null, "In hoá đơn thành công");       
+        }else{
+        	throw new IllegalArgumentException("In hóa đơn thất bại do hóa đơn trống");
         };
 
     }//GEN-LAST:event_btnInActionPerformed
@@ -909,11 +919,11 @@ public class NhanVienBanHang extends javax.swing.JFrame {
     public boolean checkThemVaoHoaDon() {
         boolean check = true;
         if (txtTenSP.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm trước", "", 0);
+            MsgBox.alert(this, "Vui lòng chọn sản phẩm trước");
             return false;
         }
         if (txtSoLuong.getText().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng trước khi thêm đơn hàng!", "", 0);
+            MsgBox.alert(this, "Vui lòng nhập số lượng trước khi thêm đơn hàng!");
             return false;
         }
         try {
@@ -921,16 +931,16 @@ public class NhanVienBanHang extends javax.swing.JFrame {
             int soLuongHangConLai = (Integer) tblDSSP.getValueAt(index, 2);
             if (soluong > 0) {
                 if (soluong > soLuongHangConLai) {
-                    JOptionPane.showMessageDialog(this, "Số lượng bán ra không được lớn hơn số lượng có trong kho!", "", 0);
+                    MsgBox.alert(this, "Số lượng bán ra không được lớn hơn số lượng có trong kho!");
                     check = false;
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Số lượng không được nhập số âm!", "", 0);
+                MsgBox.alert(this, "Số lượng không được nhập số âm!");
                 check = false;
             }
             return check;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đúng định dạng!", "", 0);
+            MsgBox.alert(this, "Vui lòng nhập đúng định dạng!");
             check = false;
             return check;
         }
@@ -957,7 +967,7 @@ public class NhanVienBanHang extends javax.swing.JFrame {
 
     private boolean checkInHoaDon() {
         if (tblDonHang.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "Bạn chưa có sản phẩm nào!", "", 0);
+            MsgBox.alert(this, "Bạn chưa có sản phẩm nào!");
             return false;
         }
         return true;
