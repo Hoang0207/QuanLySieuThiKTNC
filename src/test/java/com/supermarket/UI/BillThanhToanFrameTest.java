@@ -154,9 +154,6 @@ public class BillThanhToanFrameTest {
   
   
 
-  @BeforeTest
-  public void beforeTest() {
-  }
 
   @AfterTest
   public void afterTest() {
