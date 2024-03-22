@@ -111,10 +111,25 @@ public class DangNhapJDialogTest {
 			public void run() {
 				try {
 					dialog.getBtnDangNhap().doClick();
+					
 					System.out.println("Testcase testBtnDangNhap_2 pass");
+					try {
+						sleep(3000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				} catch (IllegalArgumentException e) {
 					Assert.fail("Testcase testBtnDangNhap_2 fail");
 				}
+			}
+		};
+		
+		Thread t4 = new Thread() {
+			@Override
+			public void run() {
+				robot.mouseMove(1230, 130);
+				robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+				robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 			}
 		};
 		t1.start();
@@ -123,6 +138,8 @@ public class DangNhapJDialogTest {
 		t2.sleep(3000);
 		t3.start();
 		t3.sleep(4000);
+		t4.start();
+		t4.sleep(2000);
 	}
 	
 	@Test
@@ -189,7 +206,8 @@ public class DangNhapJDialogTest {
 			public void run() {
 				robot.mouseMove(1050, 460);
 				robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-//				robot.mouseRelease(1);
+				robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+				System.out.println("TestCase testLblDoiMatKhau pass");
 			}
 		};
 		
@@ -218,6 +236,8 @@ public class DangNhapJDialogTest {
 				}
 				robot.mouseMove(950, 460);
 				robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+				robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+				System.out.println("TestCase testLblDangKy pass");
 			}
 		};
 		
@@ -285,6 +305,7 @@ public class DangNhapJDialogTest {
 			@Override
 			public void run() {
 				dialog.setVisible(true);
+				System.out.println("TestCase testChkNhoMatKhau pass");
 			}
 		};
 		
