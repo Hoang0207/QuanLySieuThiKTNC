@@ -65,7 +65,7 @@ public class DonHangDAOTest {
 		dao.insert(dh);
 		String maDH = (String)JdbcHelper.value("SELECT TOP 1  MADH FROM DONHANG ORDER BY MADH DESC ");
 		assertNotNull(dao.selectById_2(maDH));
-		System.out.println("TestCase insertTest1 thực hiện thành công");
+		System.out.println("TestCase insertTest2 thực hiện thành công");
 	}
 	
 	@Test
